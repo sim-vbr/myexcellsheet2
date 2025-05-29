@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <td><input type="number" class="price" value="0" min="0" step="0.01"></td>
             <td class="net-price">0.00</td>
             <td><span class="row-total">0.00</span></td>
+			<td></td>
+			<td></td>
         `;
 
         const weightInput = newRow.querySelector('.weight');
