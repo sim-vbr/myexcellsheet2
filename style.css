@@ -18,20 +18,7 @@ th {
 
 /* In your style.css file */
 
-/* Align the "Total:" text to the right */
-tfoot tr td:nth-child(5) {
-    text-align: right;
-}
 
-/* Align the grand total value to the right */
-tfoot tr td:nth-child(6) {
-    text-align: right;
-}
-
-tfoot td {
-    font-weight: bold;
-    background-color: #e2e2e2;
-}
 
 /	* In your style.css */
 
@@ -45,6 +32,20 @@ tfoot td {
         overflow-x: auto; /* Enable horizontal scrolling */
         white-space: nowrap; /* Prevent content from wrapping in cells - this might be important */
     }
+	/* Align the "Total:" text to the right */
+	tfoot tr td:nth-child(5) {
+		text-align: right;
+	}
+
+/* Align the grand total value to the right */
+	tfoot tr td:nth-child(6) {
+    text-align: right;
+}
+
+tfoot td {
+    font-weight: bold;
+    background-color: #e2e2e2;
+}
     /* REMOVE OR COMMENT OUT THESE LINES if you don't want stacked cells with labels: */
     /*
     .excel-sheet thead, .excel-sheet tbody, .excel-sheet th, .excel-sheet td, .excel-sheet tr {
