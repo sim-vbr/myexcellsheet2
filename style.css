@@ -10,7 +10,7 @@
     }
     .excel-sheet table {
         display: block; /* Make table behave like a block element */
-        overflow-x: auto; /* Enable horizontal scrolling if table is too wide */
+       /* overflow-x: auto;  Enable horizontal scrolling if table is too wide */
         white-space: nowrap; /* Prevent content from wrapping inside cells */
     }
     .excel-sheet thead, .excel-sheet tbody, .excel-sheet th, .excel-sheet td, .excel-sheet tr {
