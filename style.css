@@ -42,6 +42,10 @@
         text-align: left;
         font-weight: bold;
     }
+	/* In your style.css file */
+	.align-right {
+    text-align: right;
+	}
     /* Label the data cells with the column headers */
     .excel-sheet td:nth-of-type(1):before { content: "S.No"; }
     .excel-sheet td:nth-of-type(2):before { content: "Name"; }
