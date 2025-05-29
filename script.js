@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let rowCount = 0;
 	
 	// Define your predefined list of names
-    const predefinedNames = ["Apple", "Banana", "Orange", "Grapes", "Mango", "Pineapple"];
+    const predefinedNames = ["Brinjal", "Raw Banana", "Dondakaya", "Beerakaya", "Bendakaya", "Mirchi",
+	"Allam","Onion","Potato","Tomato","Capsicum","Bitter Gourd","Small Bitter Gourd","Pumpkin","Cabbage","Cauliflower","Drumstick","Bottle Gourd","Dosakaya","Snake Gourd","Red Capsicum","Yellow Capsicum","Raw Mango","Leafy","Carrot","Sweet potato","Cucumber","Beetroot","French Beans","Beans","Eggplant","Corn","Lemon","Broccoli"];
 
     function calculateNetPrice(row) {
         const weightInput = row.querySelector('.weight');
