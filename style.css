@@ -1,0 +1,57 @@
+/* Default styles for larger screens */
+.excel-sheet table {
+    width: 100%;
+}
+
+/* Styles for screens smaller than 768px (common breakpoint for tablets/mobiles) */
+@media (max-width: 768px) {
+    .excel-sheet {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+    .excel-sheet table {
+        display: block; /* Make table behave like a block element */
+        overflow-x: auto; /* Enable horizontal scrolling if table is too wide */
+        white-space: nowrap; /* Prevent content from wrapping inside cells */
+    }
+    .excel-sheet thead, .excel-sheet tbody, .excel-sheet th, .excel-sheet td, .excel-sheet tr {
+        display: block; /* Make table elements display as blocks */
+    }
+    .excel-sheet thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px; /* Hide table headers visually but keep them for screen readers */
+    }
+    .excel-sheet tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+    .excel-sheet td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+    .excel-sheet td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+    /* Label the data cells with the column headers */
+    .excel-sheet td:nth-of-type(1):before { content: "S.No"; }
+    .excel-sheet td:nth-of-type(2):before { content: "Name"; }
+    .excel-sheet td:nth-of-type(3):before { content: "Weight"; }
+    .excel-sheet td:nth-of-type(4):before { content: "Price"; }
+    .excel-sheet td:nth-of-type(5):before { content: "Net Price"; }
+    .excel-sheet td:nth-of-type(6):before { content: "Total"; }
+
+    input[type="number"],
+    input[type="text"] {
+        width: calc(100% - 10px); /* Adjust input width for padding */
+    }
+}
