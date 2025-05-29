@@ -1,29 +1,59 @@
-/* Default styles for larger screens */
-.excel-sheet table {
-    width: 75%;
+/* These should be outside any @media block in style.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-/* Styles for screens smaller than 768px (common breakpoint for tablets/mobiles) */
+th, td {
+    border: 1px solid #ddd; /* This adds the borders back */
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #e2e2e2;
+    font-weight: bold;
+}
+
+/* In your style.css file */
+
+/* Align the "Total:" text to the right */
+tfoot tr td:nth-child(5) {
+    text-align: right;
+}
+
+/* Align the grand total value to the right */
+tfoot tr td:nth-child(6) {
+    text-align: right;
+}
+
+tfoot td {
+    font-weight: bold;
+    background-color: #e2e2e2;
+}
+
+/	* In your style.css */
+
+/* Find this block or similar: */
 @media (max-width: 768px) {
     .excel-sheet {
-        padding: 10px; /* Adjust padding for smaller screens */
+        padding: 10px;
     }
     .excel-sheet table {
-        display: block; /* Make table behave like a block element */
-       /* overflow-x: auto;  Enable horizontal scrolling if table is too wide */
-        white-space: nowrap; /* Prevent content from wrapping inside cells */
+        display: block; /* Keep this if you want horizontal scrolling */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent content from wrapping in cells - this might be important */
     }
+    /* REMOVE OR COMMENT OUT THESE LINES if you don't want stacked cells with labels: */
+    /*
     .excel-sheet thead, .excel-sheet tbody, .excel-sheet th, .excel-sheet td, .excel-sheet tr {
-        display: block; /* Make table elements display as blocks */
+        display: block;
     }
     .excel-sheet thead tr {
         position: absolute;
         top: -9999px;
-        left: -9999px; /* Hide table headers visually but keep them for screen readers */
-    }
-    .excel-sheet tr {
-        border: 1px solid #ccc;
-        margin-bottom: 10px;
+        left: -9999px;
     }
     .excel-sheet td {
         border: none;
@@ -42,20 +72,17 @@
         text-align: left;
         font-weight: bold;
     }
-	/* In your style.css file */
-	.align-right {
-    text-align: right;
-	}
-    /* Label the data cells with the column headers */
     .excel-sheet td:nth-of-type(1):before { content: "S.No"; }
     .excel-sheet td:nth-of-type(2):before { content: "Name"; }
     .excel-sheet td:nth-of-type(3):before { content: "Weight"; }
     .excel-sheet td:nth-of-type(4):before { content: "Price"; }
     .excel-sheet td:nth-of-type(5):before { content: "Net Price"; }
     .excel-sheet td:nth-of-type(6):before { content: "Total"; }
+    */
 
+    /* Keep this for input width adjustment if needed */
     input[type="number"],
     input[type="text"] {
-        width: calc(100% - 10px); /* Adjust input width for padding */
+        width: calc(100% - 10px);
     }
 }
