@@ -1,6 +1,6 @@
 /* These should be outside any @media block in style.css */
 table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
@@ -29,7 +29,7 @@ th {
     }
     .excel-sheet table {
         display: block; /* Keep this if you want horizontal scrolling */
-        overflow-x: auto; /* Enable horizontal scrolling */
+        /* overflow-x: auto;  Enable horizontal scrolling */
         white-space: nowrap; /* Prevent content from wrapping in cells - this might be important */
     }
 	/* Align the "Total:" text to the right */

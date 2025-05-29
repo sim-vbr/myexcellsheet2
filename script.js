@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const addRowButton = document.getElementById('add-row');
     const grandTotalElement = document.getElementById('grand-total');
     let rowCount = 0;
+	
+	// Define your predefined list of names
+    const predefinedNames = ["Apple", "Banana", "Orange", "Grapes", "Mango", "Pineapple"];
 
     function calculateNetPrice(row) {
         const weightInput = row.querySelector('.weight');
@@ -28,9 +31,20 @@ document.addEventListener('DOMContentLoaded', () => {
     function addRow() {
         rowCount++;
         const newRow = sheetBody.insertRow();
+		
+		// Create the options for the dropdown
+        let nameOptionsHtml = '';
+        predefinedNames.forEach(name => {
+            nameOptionsHtml += `<option value="${name}">${name}</option>`;
+        });
+		
         newRow.innerHTML = `
             <td>${rowCount}</td>
-            <td><input type="text" class="name"></td>
+            <td>
+			 <select class="name">
+                    ${nameOptionsHtml}
+                </select>
+			</td>
             <td><input type="number" class="weight" value="0" min="0" step="0.01"></td>
             <td><input type="number" class="price" value="0" min="0" step="0.01"></td>
             <td class="net-price">0.00</td>
